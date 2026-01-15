@@ -9,8 +9,8 @@ import {
   FocusInput,
 } from "./Components/ReactSyntex";
 import { UserForm, DynamicList } from "./Components/FormComponents";
-import { RerenderFixComponent } from "./Components/Performance/ReactPerformance.jsx";
-
+// import { RerenderFixComponent } from "./Components/React-Performance/ReactPerformance.js";
+import { HeavyPage } from "./Components/React-Performance/HeavyRendering.jsx";
 function App() {
   return (
     <>
@@ -23,7 +23,8 @@ function App() {
       <FocusInput />
       <UserForm />
       <DynamicList />
-      <RerenderFixComponent />
+      {/* <RerenderFixComponent />*/}
+      <HeavyPage />
     </>
   );
 }
