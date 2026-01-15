@@ -25,11 +25,6 @@ const rows = Array.from({ length: 10000 }, (_, i) => ({
 }));
 
 const HeavyRow = memo(({ row }) => {
-  let total = 0;
-  for (let i = 0; i < 10000; i++) {
-    total += Math.sqrt(i);
-  }
-
   return (
     <div className="row">
       <h3>{row.name}</h3>

@@ -11,20 +11,24 @@ import {
 import { UserForm, DynamicList } from "./Components/FormComponents";
 // import { RerenderFixComponent } from "./Components/React-Performance/ReactPerformance.js";
 import { HeavyPage } from "./Components/React-Performance/HeavyRendering.jsx";
+import { SearchExportComponent } from "./Components/React-Performance/Deboucing.jsx";
+import { ScrollComponent } from "./Components/React-Performance/Throlling.jsx";
 function App() {
   return (
     <>
       {/* <HorizontalLoader />
       <DiceApp />*/}
-      <Accessibility />
+      {/* <Accessibility />
       <Counter />
       <Users />
       <ControlledInput />
       <FocusInput />
       <UserForm />
-      <DynamicList />
+      <DynamicList />*/}
       {/* <RerenderFixComponent />*/}
-      <HeavyPage />
+      {/* <HeavyPage />*/}
+      <SearchExportComponent />
+      <ScrollComponent />
     </>
   );
 }
