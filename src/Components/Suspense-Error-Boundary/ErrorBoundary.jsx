@@ -34,3 +34,11 @@ export class ErrorBoundary extends React.Component{
         return this.prop.children;
     }
 }
+
+function Feature(){
+    return(
+        <ErrorBoundary>
+            <RiskyWidget/>
+        </ErrorBoundary>
+    )
+}
