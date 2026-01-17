@@ -13,6 +13,7 @@ import { UserForm, DynamicList } from "./Components/FormComponents";
 import { HeavyPage } from "./Components/React-Performance/HeavyRendering.jsx";
 import { SearchExportComponent } from "./Components/React-Performance/Deboucing.jsx";
 import { ScrollComponent } from "./Components/React-Performance/Throlling.jsx";
+import {Todos} from './Components/Todos.jsx'
 function App() {
   return (
     <>
@@ -27,8 +28,9 @@ function App() {
       <DynamicList />*/}
       {/* <RerenderFixComponent />*/}
       {/* <HeavyPage />*/}
-      <SearchExportComponent />
-      <ScrollComponent />
+      {/* <SearchExportComponent />
+      <ScrollComponent /> */}
+      <Todos/>
     </>
   );
 }

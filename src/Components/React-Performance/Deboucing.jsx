@@ -51,4 +51,4 @@ const handleSearch = debounce((e) => {
   console.log("Searching for:", e.target.value);
 }, 500);
 
-searchInput.addEventListener("input", handleSearch);
+// searchInput.addEventListener("input", handleSearch);
