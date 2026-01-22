@@ -14,6 +14,10 @@ import { HeavyPage } from "./Components/React-Performance/HeavyRendering.jsx";
 import { SearchExportComponent } from "./Components/React-Performance/Deboucing.jsx";
 import { ScrollComponent } from "./Components/React-Performance/Throlling.jsx";
 import {Todos} from './Components/Todos.jsx'
+import {TodosEdit} from './Components/TodosEdit.jsx'
+import {DebounceSearch} from './Components/React-Performance/Practice.jsx'
+import {ThrottleButton} from './Components/React-Performance/Practice.jsx'
+
 function App() {
   return (
     <>
@@ -30,7 +34,10 @@ function App() {
       {/* <HeavyPage />*/}
       {/* <SearchExportComponent />
       <ScrollComponent /> */}
-      <Todos/>
+      {/* <Todos/>
+      <TodosEdit/> */}
+      <DebounceSearch/>
+      <ThrottleButton/>
     </>
   );
 }
