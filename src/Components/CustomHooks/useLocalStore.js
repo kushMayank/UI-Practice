@@ -1,6 +1,6 @@
 const { useState, useEffect } = require("react");
 
-export function useLocalStore(key, initialValue){
+function useLocalStore(key, initialValue){
     const [state, setState] = useState(()=>{
         try{
             const raw = localStorage.getItem(key);
@@ -23,5 +23,11 @@ export function useLocalStore(key, initialValue){
         setState(typeof initialValue === 'function'? initialValue(): initialValue)
     }
 
-    return [state, setState, remove]
+    return [state, setState, remove];
+}
+
+//usage
+export const ThemeToggle = ()=>{
+    const [ theme, setTheme] = useLocalStore('theme', 'light');
+    return <button onClick={()=> setTheme(theme=> theme==='light'? 'dark': 'light')}>{theme}</button>
 }
