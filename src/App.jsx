@@ -7,7 +7,7 @@ import {
   Users,
   ControlledInput,
   FocusInput,
-} from "./Components/ReactSyntex";
+} from "./Components/ReactSyntax";
 import { UserForm, DynamicList } from "./Components/FormComponents";
 // import { RerenderFixComponent } from "./Components/React-Performance/ReactPerformance.js";
 import { HeavyPage } from "./Components/React-Performance/HeavyRendering.jsx";
@@ -17,6 +17,7 @@ import {Todos} from './Components/Todos.jsx'
 import {TodosEdit} from './Components/TodosEdit.jsx'
 import {DebounceSearch} from './Components/React-Performance/Practice.jsx'
 import {ThrottleButton} from './Components/React-Performance/Practice.jsx'
+import {AccodianContainer} from './Components/UI-Interviews/Accordion.jsx'
 
 function App() {
   return (
@@ -36,8 +37,9 @@ function App() {
       <ScrollComponent /> */}
       {/* <Todos/>
       <TodosEdit/> */}
-      <DebounceSearch/>
-      <ThrottleButton/>
+      {/* <DebounceSearch/>
+      <ThrottleButton/> */}
+      <AccodianContainer/>
     </>
   );
 }
