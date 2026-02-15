@@ -1,0 +1,52 @@
+🚀 What is useEffect?
+
+   useEffect runs after rendering + after browser paint
+
+   Meaning:
+
+   React renders UI
+   Browser shows UI on screen
+   Then useEffect runs
+
+   Example
+   useEffect(() => {
+   console.log("useEffect runs");
+   }, []);
+
+
+   Used for:
+   API calls
+   setTimeout
+   event listeners
+   console logs
+   side effects
+
+   Because it doesn't block UI.
+
+🚀 What is useLayoutEffect?
+
+   useLayoutEffect runs:
+
+      After render but BEFORE browser paints screen
+
+      Meaning:
+      React renders UI
+      useLayoutEffect runs
+      Then browser paints screen
+      So it blocks screen painting until finished.
+
+      Example
+      useLayoutEffect(() => {
+      console.log("useLayoutEffect runs");
+      }, []);
+
+🎯 Visual timeline
+      Render component
+         ↓
+      DOM updated
+         ↓
+      useLayoutEffect runs (blocking)
+         ↓
+      Browser paints screen
+         ↓
+      useEffect runs (non-blocking)
