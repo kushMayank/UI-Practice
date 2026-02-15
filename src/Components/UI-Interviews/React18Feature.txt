@@ -1,88 +1,91 @@
+WORDING -> I’m using React 18. It introduced major features like concurrent rendering, automatic batching, the new createRoot API, Suspense improvements, 
+and hooks like useTransition and useDeferredValue which help improve performance and user experience by making rendering more efficient and non-blocking.
+
 🚀 Major features introduced in React 18
-1️⃣ Concurrent Rendering (Biggest feature)
+    1️⃣ Concurrent Rendering (Biggest feature)
 
-    React 18 introduced concurrent rendering.
-    It allows React to:
-        Pause rendering
-        Resume rendering
-        Prioritize urgent updates
-        Keep UI responsive
+        React 18 introduced concurrent rendering.
+        It allows React to:
+            Pause rendering
+            Resume rendering
+            Prioritize urgent updates
+            Keep UI responsive
 
-    Example:
-        Typing input → high priority
-        Big list rendering → low priority
-        React handles both smoothly.
+        Example:
+            Typing input → high priority
+            Big list rendering → low priority
+            React handles both smoothly.
 
-    👉 Makes apps faster and smoother.
+        👉 Makes apps faster and smoother.
 
-2️⃣ Automatic Batching
+    2️⃣ Automatic Batching
 
-    Before React 18:
-        Batching only worked inside React event handlers.
+        Before React 18:
+            Batching only worked inside React event handlers.
 
-    Now in React 18:
-        Batching works everywhere:
+        Now in React 18:
+            Batching works everywhere:
 
-    setTimeout
-    API calls
-    promises
-    async/await
+        setTimeout
+        API calls
+        promises
+        async/await
 
-    Example:
-        setCount(c => c + 1);
-        setAge(a => a + 1);
-    Now React does:
-         Only ONE re-render instead of multiple.
+        Example:
+            setCount(c => c + 1);
+            setAge(a => a + 1);
+        Now React does:
+            Only ONE re-render instead of multiple.
 
-    Improves performance.
+        Improves performance.
 
-3️⃣ createRoot API (New root API)
+    3️⃣ createRoot API (New root API)
 
-    Old React (17):
-    ReactDOM.render(<App />, root);
-
-
-    React 18:
-    import { createRoot } from "react-dom/client";
-    const root = createRoot(document.getElementById("root"));
-    root.render(<App />);
-    This enables concurrent features.
-
-4️⃣ useTransition Hook
-
-    Used for:
-        Non-urgent UI updates
-    Example:
-        Searching
-        Filtering large list
-        Navigation
-
-        const [isPending, startTransition] = useTransition();
-
-            startTransition(() => {
-            setList(newList);
-            });
+        Old React (17):
+        ReactDOM.render(<App />, root);
 
 
-    Makes UI smooth without lag.
+        React 18:
+        import { createRoot } from "react-dom/client";
+        const root = createRoot(document.getElementById("root"));
+        root.render(<App />);
+        This enables concurrent features.
 
-5️⃣ useDeferredValue
-    Used to delay heavy updates.
+    4️⃣ useTransition Hook
 
-    Example:
+        Used for:
+            Non-urgent UI updates
+        Example:
+            Searching
+            Filtering large list
+            Navigation
 
-        Search input
+            const [isPending, startTransition] = useTransition();
 
-        Large filtering
+                startTransition(() => {
+                setList(newList);
+                });
 
-        const deferredValue = useDeferredValue(search);
+
+        Makes UI smooth without lag.
+
+    5️⃣ useDeferredValue
+        Used to delay heavy updates.
+
+        Example:
+
+            Search input
+
+            Large filtering
+
+            const deferredValue = useDeferredValue(search);
 
 
-    Improves performance.
+        Improves performance.
 
-6️⃣ Suspense improvements
+    6️⃣ Suspense improvements
 
-    React 18 improved Suspense:
-    Works better with data fetching
-    Better loading UI handling
-    Concurrent rendering support
+        React 18 improved Suspense:
+        Works better with data fetching
+        Better loading UI handling
+        Concurrent rendering support
