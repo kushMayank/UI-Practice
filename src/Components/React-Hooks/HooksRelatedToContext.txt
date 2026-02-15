@@ -1,5 +1,3 @@
-useReducer and useContext
-
 
 
 2️⃣ useReducer (Advanced state management)
@@ -22,26 +20,26 @@ useReducer and useContext
 
         const [state, dispatch] = useReducer(reducer, initialState);
 
-🎯 Interview questions on useReducer
-    Q1: When to use useReducer instead of useState?
+    🎯 Interview questions on useReducer
+        Q1: When to use useReducer instead of useState?
 
-        Answer:
-        When state logic is complex, involves multiple sub-values, or depends on previous state.
+            Answer:
+            When state logic is complex, involves multiple sub-values, or depends on previous state.
 
-        Example:
-        Shopping cart
-        Form with many fields
-        Complex updates
+            Example:
+            Shopping cart
+            Form with many fields
+            Complex updates
 
-    Q2: Difference between useState and useReducer?
-        useState	useReducer
-        Simple state	Complex state
-        Easy syntax	Reducer pattern
-        Local updates	Centralized logic
-        Small apps	Large apps
-        Q3: Is useReducer like Redux?
+        Q2: Difference between useState and useReducer?
+            useState	useReducer
+            Simple state	Complex state
+            Easy syntax	Reducer pattern
+            Local updates	Centralized logic
+            Small apps	Large apps
+            Q3: Is useReducer like Redux?
 
-    Yes, it follows reducer pattern (state + action → new state).
+        Yes, it follows reducer pattern (state + action → new state).
 
 3️⃣ useContext (Global state management)
 

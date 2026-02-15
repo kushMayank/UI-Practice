@@ -1,0 +1,91 @@
+🚨 What exactly blocks UI?
+
+    When React doing:
+        Big rendering
+        Big calculation
+        DOM updates
+        
+    Browser cannot:
+        Handle typing
+        Scroll smoothly
+        Click fast
+        UI freezes.
+
+    This is called:
+    Blocking main thread
+
+🧠 Then how React 18 solves?
+
+    Using concurrent rendering.
+
+    React says:
+        Typing = urgent
+        Big rendering = not urgent
+
+    So React:
+        Lets typing happen first
+        Pauses heavy rendering
+        Continues later
+        UI smooth.    
+
+
+🎯 Method 1: useTransition (YOU control update)
+
+    👉 You tell React:
+        “This state update is heavy — run it later”
+        You manually mark update as low priority.
+
+    Example
+        const [isPending, startTransition] = useTransition();
+
+        const handleChange = (e) => {
+        setSearch(e.target.value); // urgent
+
+        startTransition(() => {
+            setFilteredList(filterData(e.target.value)); // heavy
+        });
+        };
+
+    Meaning
+
+    You are telling React:
+        Input update urgent
+        Filtering update low priority
+
+    You control it manually.        
+
+
+🎯 Method 2: useDeferredValue (React controls delay)
+
+    Here you don’t control update.
+    You just say:
+    “React, delay this value”
+
+    Example
+        const [search, setSearch] = useState("");
+        const deferredSearch = useDeferredValue(search);
+
+        const filtered = bigData.filter(item =>
+        item.includes(deferredSearch)
+        );
+
+    Meaning
+    You tell React:
+    Use delayed search value for filtering
+    React automatically delays heavy work.
+    You don't manually control anything.
+
+🧠 Real-life analogy
+
+    Imagine food delivery 🍕
+
+    useTransition
+
+        You call restaurant and say:
+        Deliver pizza later, I’m busy
+        You control timing.
+
+    useDeferredValue
+
+        Swiggy automatically delays delivery because traffic.
+        System controls timing.
