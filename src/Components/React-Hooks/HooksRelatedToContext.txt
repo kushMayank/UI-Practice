@@ -1,0 +1,68 @@
+useReducer and useContext
+
+
+
+2️⃣ useReducer (Advanced state management)
+
+    Used for:
+        Complex state logic or multiple related states
+        Similar to Redux reducer.
+
+    Example
+        const initialState = {count:0};
+
+        function reducer(state, action){
+        switch(action.type){
+            case "increment":
+            return {count: state.count + 1};
+            default:
+            return state;
+        }
+        }
+
+        const [state, dispatch] = useReducer(reducer, initialState);
+
+🎯 Interview questions on useReducer
+    Q1: When to use useReducer instead of useState?
+
+        Answer:
+        When state logic is complex, involves multiple sub-values, or depends on previous state.
+
+        Example:
+        Shopping cart
+        Form with many fields
+        Complex updates
+
+    Q2: Difference between useState and useReducer?
+        useState	useReducer
+        Simple state	Complex state
+        Easy syntax	Reducer pattern
+        Local updates	Centralized logic
+        Small apps	Large apps
+        Q3: Is useReducer like Redux?
+
+    Yes, it follows reducer pattern (state + action → new state).
+
+3️⃣ useContext (Global state management)
+
+    Used to share state across components without prop drilling.
+
+    Example:
+        User auth
+        Theme
+        Language
+        Global settings
+
+    Example
+
+        const ThemeContext = createContext();
+
+        function App(){
+        const [theme,setTheme] = useState("dark");
+
+        return (
+            <ThemeContext.Provider value={{theme,setTheme}}>
+            <Child/>
+            </ThemeContext.Provider>
+        );
+        }
