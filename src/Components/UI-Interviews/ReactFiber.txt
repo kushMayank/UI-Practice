@@ -1,0 +1,88 @@
+What is React Fiber architecture?
+
+
+    -> The Fiber Tree is React’s internal data structure where each component is represented as a fiber node. 
+    It allows React to manage rendering efficiently by enabling incremental updates, prioritization, and interruptible rendering through the React Fiber architecture.
+
+🧠 Why React created Fiber? 
+
+    Before Fiber (old “stack” reconciler), React:
+        Rendered everything synchronously
+        Could block UI if work was heavy
+        Could not pause or prioritize updates
+
+    React Fiber solves this by making rendering:
+        Interruptible
+        Prioritized
+        Incremental
+        More efficient
+
+        So React can pause rendering, update something urgent (like typing), then resume.
+
+⚙️ How Fiber helps performance
+
+    Fiber allows React to:
+
+    1. Pause rendering
+        If rendering is heavy:
+        React can stop midway
+        Let browser handle user input
+        Resume later
+
+    2. Prioritize updates
+
+        Example:
+        Typing in input → high priority
+        Background data fetch → low priority
+        React schedules work accordingly.
+
+    3. Avoid blocking UI
+
+        Old React: one big synchronous render
+        Fiber: small chunks of work
+
+🔁 Full flow of update in Fiber Tree
+
+    STATE CHANGE
+        ↓
+        Create/update fiber
+        ↓
+        Build work-in-progress tree
+        ↓
+        Compare with current tree
+        ↓
+        Prepare DOM changes
+        ↓
+        ⚡ COMMIT PHASE
+        Apply changes to real DOM
+        ↓
+    UI updated
+
+🎯 Render vs Commit phase (interview gold)
+    🧠 Render Phase
+
+    Builds new fiber tree
+
+    Calls components
+
+    Calculates changes
+
+    Can pause/resume
+
+    No DOM changes
+
+    ⚡ Commit Phase
+
+    Applies changes to DOM
+
+    Runs useEffect
+
+    Updates refs
+
+    Cannot pause
+
+    Very fast      
+
+🔥 One-line memory trick
+    Render phase prepares updates (can pause)
+    Commit phase applies updates (cannot pause)
