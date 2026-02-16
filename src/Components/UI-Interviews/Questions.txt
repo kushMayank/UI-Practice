@@ -14,3 +14,20 @@ what is over context in react
 
 how to improve performance in hook?
 
+----------------------- 16 feb 2026 ----------------------
+
+how next js hamdle the cross origin on backend
+
+next router
+
+how you add the react router in application
+
+how u create a reducer and how u create a store
+
+can we dispatch from reducer
+
+how we access the context value in component
+
+what is redux thunk ?
+
+
