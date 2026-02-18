@@ -19,6 +19,10 @@ how to improve performance in hook?
 how next js hamdle the cross origin on backend
 
 next router
+Next js-> Routing 
+api calling the SSR ISR SSG CSR
+file structure / app based structure
+
 
 how you add the react router in application
 
