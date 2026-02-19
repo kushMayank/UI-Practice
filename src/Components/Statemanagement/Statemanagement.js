@@ -79,6 +79,7 @@ const store = configureStore({
     reducer:{
         counter: counterReducer
     }
+  
 })
 
 const slice = createSlice({
@@ -100,4 +101,25 @@ const count = useSelector((state)=> state.counter.value);
 const dispatch = useDispatch()
 
 dispatch(increment())
+
+
+
+// Redux Thunk
+
+/* is middleware is a function that sits between dispaching an action and the momemt
+it reaches the reducer
+It is powerfull way to incepet and modify or even actions before they update the state
+
+
+What middleware does ?
+-> Handle Asynchronous logic -> perform api calls and side effect that pure reducers cannot handle
+-> intercept actions
+-> conditional dispatch
+-> runtime check
+
+
+Redux thunk is default middleware provided by the Redux toolkit
+
+*/
+
 
