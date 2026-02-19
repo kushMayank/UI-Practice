@@ -123,3 +123,9 @@ Redux thunk is default middleware provided by the Redux toolkit
 */
 
 
+
+
+// Zustand
+
+// Modern alternative to the Redux
+
