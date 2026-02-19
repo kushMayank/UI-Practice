@@ -17,6 +17,8 @@ createContext(with useContext)
 
 // Use reducer
 // ----------------
+
+
 const { useReducer, createContext, useContext } = require("react");
 
 const [state, dispatch] = useReducer(reducer, initialState);
@@ -30,6 +32,8 @@ function  reducer(state, action){
 
 // context API
 // ----------------
+
+
 const UserContext = createContext(null);
 
 export function UserProvider({children}){
@@ -47,6 +51,9 @@ const {user} = useContext(UserContext)
 
 
 // using useReducer and contextAPI together
+// ---------------------------------------------
+
+
 
 // create context for state and dispatch
 const TasksContext = createContext(null);
@@ -62,3 +69,35 @@ const [task, dispatch: dispatchAction] = useReducer(tasksReducer, initialTasks);
         <TaskList/>
     </TasksDispatchContext.Provider>
 </TasksContext.Provider>
+
+
+// Redux toolKit
+
+// store.js
+
+const store = configureStore({
+    reducer:{
+        counter: counterReducer
+    }
+})
+
+const slice = createSlice({
+    name:'counter',
+    initialState: {value:0},
+    reducers: {
+        increment: (state)=>{
+            state.value +=1
+        }
+    }
+})
+export const {increment} = slice.actions;
+export default slice.reducer;
+
+
+// use
+
+const count = useSelector((state)=> state.counter.value);
+const dispatch = useDispatch()
+
+dispatch(increment())
+
