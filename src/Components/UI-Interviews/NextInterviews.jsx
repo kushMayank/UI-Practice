@@ -75,10 +75,56 @@ Next support -
 
     revalidate after 10sec
        fetch('url', {next: { revalidate: 10}});
+ 
+*/
 
 
+/*
+
+    Routing in Next
+
+      Page Based
+            page/
+               index.js                   -> /
+               about.js                   -> /about  
+               blog/
+                 index.js                 -> /blog    
+                 [id].js                  -> /blog/1   
+               _app.js                    -> global wrapper
+               _document.js
+               api/
+                  user.js                 -> /api/user
 
 
-       
-    
+        dynamic route -> [id].js 
+        catch all -> [...slug].js          
+        api route -> page/api/user.ts
+
+
+      App Based
+      
+            app/
+                page.js                         -> /  
+                layout.js                       -> global layout    
+                about/
+                    page.js                     -> /about
+                blog/ 
+                    page.js                     -> /blog      
+                    [id]
+                        page.js                 -> /blog/1   
+                api/
+                    user/
+                        route.ts
+                dashboard/
+                    layout.js
+                    page.js  
+                    
+        dynamic route -> [id].page.js 
+        catch all -> [...slug].page.js   
+        api route -> app/api/user/route.ts
+        Private folder -> app/(auth)/login/page.js  -> /login
+        underscore folder -> _ folder -> app/_component/Navbar.js -> it will ignored by routing
+
+        
+
 */
