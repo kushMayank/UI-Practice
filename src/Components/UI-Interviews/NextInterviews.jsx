@@ -61,6 +61,24 @@ Next support -
     
     App based router
     -----------------
-        
+    we fetch directly inside the server component using fetch()  with async await
+
+    async function Page(){
+        const res = await fetch('url');
+        const data = await res.json();
+
+        return <div> {data.name}</div>
+    }
+
+    Disable caching
+      fetch('url', {cache: 'no-store'});
+
+    revalidate after 10sec
+       fetch('url', {next: { revalidate: 10}});
+
+
+
+
+       
     
 */
