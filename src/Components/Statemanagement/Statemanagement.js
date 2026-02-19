@@ -30,7 +30,7 @@ function  reducer(state, action){
 
 // context API
 // ----------------
-const UserContext = createContext();
+const UserContext = createContext(null);
 
 export function UserProvider({children}){
     const [user, setUser] = useState(null);
@@ -44,3 +44,21 @@ export function UserProvider({children}){
 
 // use:
 const {user} = useContext(UserContext)
+
+
+// using useReducer and contextAPI together
+
+// create context for state and dispatch
+const TasksContext = createContext(null);
+const TasksDispatchContext = createContext(null);
+
+// In Parent Component
+const [task, dispatch: dispatchAction] = useReducer(tasksReducer, initialTasks);
+
+// Provide them
+
+<TasksContext.Provider value={task}>
+    <TasksDispatchContext.Provider value={dispatch}>
+        <TaskList/>
+    </TasksDispatchContext.Provider>
+</TasksContext.Provider>
